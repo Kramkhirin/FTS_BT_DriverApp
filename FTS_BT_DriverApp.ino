@@ -289,9 +289,8 @@ void loop()
     if (deviceConnected) {
         pTxCharacteristic->setValue("Device Connected !!");
        //  Serial2.println(" Phone Device Connected . . . ");
-
+       
       if(sendBT_flag==true){
-      
        pTxCharacteristic->setValue((unsigned char*)buf, indexbuf);
        pTxCharacteristic->notify();
       }
@@ -337,6 +336,5 @@ void loop()
     Serial.println(strrec);
     isNullRxBT = false;
   }
-
 }
 //-------------------------------------
