@@ -4,9 +4,7 @@
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
-
-//----------
-//----------
+//-------------------------------
 BLEServer *pServer = NULL;
 BLECharacteristic * pTxCharacteristic;
 bool deviceConnected = false;
@@ -20,8 +18,8 @@ uint8_t txValue = 0;
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
-#define LED1 33
-#define LED2 25
+#define LED1 33  //  WRITH
+#define LED2 25  //  BLUE
 //-------------------------------
 unsigned long currentMillisLED1;
 unsigned long LED1Millis;  // when button was released
@@ -226,7 +224,7 @@ void setup()
   Serial.println("BT - SMART Waitting to Pair . . . !");
   digitalWrite(LED2, HIGH);
   
-  /// Create the BLE Device
+/// Create the BLE Device
 //std::string ble_name = "บลูทูธ";
 //char buffer_test[] = {0xE0,0xB8,0xA5,
 //0xE0,0xB8,0xAD,
@@ -278,7 +276,6 @@ void setup()
   pServer->getAdvertising()->start();
   Serial.println(" Waiting a client connection to notify . . . ");
 }
-
 //----------------------------------------------
 void loop()
 {
@@ -288,6 +285,8 @@ void loop()
   
     if (deviceConnected) {
         pTxCharacteristic->setValue("Device Connected !!");
+         LED1_onBlinlk(200);
+         LED1_onBlinlk(200);
        //  Serial2.println(" Phone Device Connected . . . ");
        
       if(sendBT_flag==true){
