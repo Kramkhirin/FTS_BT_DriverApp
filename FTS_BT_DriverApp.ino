@@ -287,7 +287,7 @@ void loop()
         pTxCharacteristic->setValue("Device Connected !!");
          LED1_onBlinlk(200);
          LED1_onBlinlk(200);
-       //  Serial2.println(" Phone Device Connected . . . ");
+         Serial.println("  Device Connected ! !  ");
        
       if(sendBT_flag==true){
        pTxCharacteristic->setValue((unsigned char*)buf, indexbuf);
